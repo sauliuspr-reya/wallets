@@ -35,6 +35,7 @@ Balance Service	Fetch and expose Ethereum wallet balances through APIs.
 Frontend	Provide a user-friendly interface for wallet and transaction management.
 
 Architecture Diagram
+```
 
 +-----------------------+     +------------------------+     +------------------------+
 |       Frontend        |<--->|   Balance Service      |<--->|    Wallet Manager      |
@@ -47,7 +48,7 @@ Architecture Diagram
                           |     Secrets Service    |
                           | (AWS Secrets + KMS)    |
                           +------------------------+
-
+```
 Development Plan
 
 Phase 1: Foundation Setup
@@ -96,7 +97,7 @@ Messaging	NATS.io JetStream
 Deployment	Kubernetes (EKS), AWS
 
 Project Structure
-
+```
 wallets-app/
 ├── lerna.json
 ├── pnpm-workspace.yaml
@@ -114,7 +115,7 @@ wallets-app/
 │   └── frontend/
 │       ├── pages/
 │       └── components/
-
+```
 Contribution Guidelines
 	1.	Use TypeScript for all code.
 	2.	Manage dependencies with pnpm.

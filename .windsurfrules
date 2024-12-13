@@ -1,0 +1,41 @@
+# Workspace-Specific Rules for Project
+
+## Project Context
+- Framework: **Next.js 14** (with `app` directory routing and Server Actions).
+- UI: **ShadCN UI version 2.1.7** and **Tailwind CSS** for styling.
+- Backend: TypeScript for all logic and services.
+- Deployment: Runs on **EKS Kubernetes pods**, with Kubernetes manifests used for configuration.
+
+## TypeScript Usage
+- All new code must be written in **TypeScript**.
+- Ensure type safety throughout the application, including API responses, components, and backend services.
+
+## Package Management
+- Use **pnpm** exclusively for dependency management.
+  - Dependencies should be installed using `pnpm` commands (e.g., `pnpm add` or `pnpm update`).
+  - Maintain a clean and consistent dependency tree using `pnpm-lock.yaml`.
+  - For shared dependencies, use pnpm workspaces.
+
+## UI Component Development
+- Use ShadCN UI components for all frontend elements. Examples:
+  - `shadcn/ui/table` for displaying tabular data.
+  - `shadcn/ui/navigation` for navigation bars and menus.
+- Avoid using generic React components unless the required component is unavailable in ShadCN.
+
+## API Development
+- Define backend APIs in the `app` directory of Next.js 14.
+- Use Server Actions for server-side logic.
+- Avoid deprecated patterns like pages-based API routes or older data-fetching methods.
+
+## Asynchronous Operations
+- For transaction signing, publish requests to **NATS.io JetStream** and process them securely in the Wallet Manager service.
+- Use structured NATS subjects to organize messages (e.g., `transactions.sign`).
+
+## Deployment Requirements
+- Use Kubernetes manifests for deploying resources on EKS.
+- Store environment variables and secrets securely using Kubernetes Secrets.
+
+## Miscellaneous
+- Enforce secure handling of private keys via **AWS KMS** and **Secrets Manager**.
+- Maintain alignment with TypeScript, pnpm, and ShadCN UI usage guidelines.
+- Follow best practices for modern monorepos using pnpm workspaces.
