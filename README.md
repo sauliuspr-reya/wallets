@@ -1,8 +1,8 @@
-Here’s a high-level plan and architecture for your project, formatted as a README.md file:
 
-Wallets App
 
-Overview
+#Wallets App
+
+## Overview
 
 The Wallets App is a decentralized application designed for managing Ethereum-based wallets securely and efficiently. It offers features for balance checking, transaction signing, and wallet management, all while adhering to modern development practices and leveraging cutting-edge technologies like Next.js 14, ShadCN UI, and AWS services.
 
